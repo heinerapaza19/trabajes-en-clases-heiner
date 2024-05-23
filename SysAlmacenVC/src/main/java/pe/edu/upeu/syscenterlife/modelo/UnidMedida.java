@@ -15,19 +15,19 @@ import jakarta.persistence.Table;
 import java.util.List;
 import lombok.Data;
 
-@Data //para get y set
+@Data
 @Entity
-@Table(name = "unid_medida")//para decirle para crear con esta tabla que lleve este nombre
+@Table(name = "unid_medida")
 public class UnidMedida {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false) //jamas sea nulo 
-    @Column(name = "id_unidad")//para decirle que la comlumna vaya a base de datos
-    private Integer idUnidad; // para id
+    @Basic(optional = false)
+    @Column(name = "id_unidad")
+    private Integer idUnidad;
     @Basic(optional = false)
     @Column(name = "nombre_medida")
     private String nombreMedida;
+    
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_unidad", referencedColumnName = "id_unidad")
     @JsonIgnoreProperties({"idUnidad"})

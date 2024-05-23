@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package pe.edu.upeu.syscenterlife.gui;
 
 import java.awt.Color;
@@ -19,7 +22,6 @@ import net.miginfocom.swing.MigLayout;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
-import pe.edu.upeu.syscenterlife.GUII.GUIMain;
 import pe.edu.upeu.syscenterlife.componentes.Button;
 import pe.edu.upeu.syscenterlife.componentes.FondoPanel;
 import pe.edu.upeu.syscenterlife.componentes.MyPasswordField;
@@ -63,6 +65,7 @@ public class Login extends javax.swing.JFrame {
             };
         } catch (Exception e) {
         }
+        
         txtPassword = new MyPasswordField();
         loginButton = new Button();
         loginButton.setFont(new Font("sansserif", 1, 20));
@@ -176,11 +179,11 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 469, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 344, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();

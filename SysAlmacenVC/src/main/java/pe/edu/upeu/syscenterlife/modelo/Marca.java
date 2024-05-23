@@ -17,7 +17,6 @@ import lombok.Data;
 @Data
 @Entity
 public class Marca {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -26,6 +25,7 @@ public class Marca {
     @Basic(optional = false)
     @Column(name = "nombre")
     private String nombre;
+    
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_marca", referencedColumnName = "id_marca")
     @JsonIgnoreProperties({"idMarca"})

@@ -2,7 +2,6 @@ package pe.edu.upeu.syscenterlife.util;
 
 import javax.swing.*;
 
-//documentacion interna
 /**
  * Clase Principal para manejo de alertas
  *
@@ -18,7 +17,6 @@ import javax.swing.*;
  * @see <a href = "https://github.com/davidmp" />Aqui Github</a>
  * @return No hay retorno de metodos
  */
-
 public class MsgBox {
 
     UtilsX obj = new UtilsX();
@@ -39,6 +37,6 @@ public class MsgBox {
 
     public static void main(String[] args) {
         //MsgBox msgBox = new MsgBox("Mensaje", JOptionPane.ERROR_MESSAGE, "img/secrecy-icon.png");
-        MsgBox msgBox = new MsgBox("Probando", JOptionPane.CANCEL_OPTION, "");
+        MsgBox msgBox = new MsgBox("Probando.....", JOptionPane.CANCEL_OPTION, "");
     }
 }

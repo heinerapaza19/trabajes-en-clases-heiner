@@ -12,8 +12,7 @@ import pe.edu.upeu.syscenterlife.modelo.Cliente;
 public interface ClienteRepository extends 
         JpaRepository<Cliente, String>{
     
-   @Query(value = "SELECT * FROM cliente WHERE nombrers like :nombre", nativeQuery = true)
+    @Query(value = "SELECT * FROM cliente WHERE nombrers like :nombre", nativeQuery = true)
     List<Cliente> findByNombre(@Param(value = "nombre") String nombre);
-    
     
 }

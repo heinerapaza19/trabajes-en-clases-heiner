@@ -18,7 +18,6 @@ import lombok.Data;
 @Data
 @Entity
 public class Producto {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -66,6 +65,5 @@ public class Producto {
     @JoinColumn(name = "id_producto", referencedColumnName = "id_producto")
     @JsonIgnoreProperties({"idProducto"})
     public List<VentaDetalle> ventaDetalles;
-
-
+    
 }

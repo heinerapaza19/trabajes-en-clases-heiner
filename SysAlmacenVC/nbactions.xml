@@ -13,15 +13,7 @@
                 <exec.vmArgs></exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
                 <exec.appArgs></exec.appArgs>
-<<<<<<< HEAD
                 <exec.mainClass>pe.edu.upeu.syscenterlife.SysAlmacenVcApplication</exec.mainClass>
-=======
-<<<<<<< HEAD
-                <exec.mainClass>pe.edu.upeu.syscenterlife.SysAlmacenVcApplication</exec.mainClass>
-=======
-                <exec.mainClass>${packageClassName}</exec.mainClass>
->>>>>>> 80f5904d48c193e293968cb14f51533d4510f81a
->>>>>>> 657518057f6e9dc98474e60e8238e8f4abd037b5
                 <exec.executable>java</exec.executable>
             </properties>
         </action>
@@ -38,15 +30,7 @@
                 <exec.vmArgs>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
                 <exec.appArgs></exec.appArgs>
-<<<<<<< HEAD
                 <exec.mainClass>pe.edu.upeu.syscenterlife.SysAlmacenVcApplication</exec.mainClass>
-=======
-<<<<<<< HEAD
-                <exec.mainClass>pe.edu.upeu.syscenterlife.SysAlmacenVcApplication</exec.mainClass>
-=======
-                <exec.mainClass>${packageClassName}</exec.mainClass>
->>>>>>> 80f5904d48c193e293968cb14f51533d4510f81a
->>>>>>> 657518057f6e9dc98474e60e8238e8f4abd037b5
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
             </properties>
@@ -63,15 +47,7 @@
             <properties>
                 <exec.vmArgs></exec.vmArgs>
                 <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
-<<<<<<< HEAD
                 <exec.mainClass>pe.edu.upeu.syscenterlife.SysAlmacenVcApplication</exec.mainClass>
-=======
-<<<<<<< HEAD
-                <exec.mainClass>pe.edu.upeu.syscenterlife.SysAlmacenVcApplication</exec.mainClass>
-=======
-                <exec.mainClass>${packageClassName}</exec.mainClass>
->>>>>>> 80f5904d48c193e293968cb14f51533d4510f81a
->>>>>>> 657518057f6e9dc98474e60e8238e8f4abd037b5
                 <exec.executable>java</exec.executable>
                 <exec.appArgs></exec.appArgs>
             </properties>
