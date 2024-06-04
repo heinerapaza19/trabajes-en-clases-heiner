@@ -41,7 +41,8 @@ public class MarcaService {
     public List <ComboBoxOption> listarMarcaCombobox(){
         List<ComboBoxOption> listar = new ArrayList<>();
         for (Marca marca : repository.findAll()){
-            listar.add(new ComboBoxOption(String.valueOf(marca.getIdMarca()), marca.getNombre()));
+            listar.add(new ComboBoxOption(String.valueOf(marca.getIdMarca()), 
+                    marca.getNombre()));
         }
         
     return listar;

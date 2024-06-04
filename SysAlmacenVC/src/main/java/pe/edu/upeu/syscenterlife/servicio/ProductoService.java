@@ -68,7 +68,8 @@ public class ProductoService {
     public List<ComboBoxOption> listarMarcaCombobox(Integer id) {
         List<ComboBoxOption> listar = new ArrayList<>();
         for (Producto marca : productoRepository.listProductoMarca(id)){
-            listar.add(new ComboBoxOption(String.valueOf(marca.getIdMarca()), marca.getNombre()));
+            listar.add(new ComboBoxOption(String.valueOf(marca.getIdProducto()), 
+                    marca.getNombre()));
         }
 
         return listar;

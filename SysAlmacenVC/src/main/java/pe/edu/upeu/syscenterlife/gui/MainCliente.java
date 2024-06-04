@@ -4,9 +4,12 @@
  */
 package pe.edu.upeu.syscenterlife.gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.List;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -19,6 +22,7 @@ import pe.edu.upeu.syscenterlife.modelo.Cliente;
 import pe.edu.upeu.syscenterlife.modelo.ComboBoxOption;
 import pe.edu.upeu.syscenterlife.servicio.ClienteService;
 import pe.edu.upeu.syscenterlife.servicio.MarcaService;
+import pe.edu.upeu.syscenterlife.servicio.ProductoService;
 
 @Component
 public class MainCliente extends javax.swing.JPanel {
@@ -30,9 +34,10 @@ public class MainCliente extends javax.swing.JPanel {
     TableRowSorter<TableModel> trsfiltro;
     @Autowired
     MarcaService maracaservice;
-    
-    
-    
+
+    @Autowired
+    ProductoService productoservice;
+    private DefaultListModel<String> listModel;
 
     enum TIPOCLXIENTE {
         Natural, General, Juridico
@@ -44,6 +49,29 @@ public class MainCliente extends javax.swing.JPanel {
             cbxTipo.addItem(myVar.toString());
         }
 
+        listModel = new DefaultListModel<>();
+        combox.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Integer idM = Integer.parseInt(((ComboBoxOption) combox.getSelectedItem()).getKey() == null ? "0" : 
+                            ((ComboBoxOption) combox.getSelectedItem()
+                    ).getKey()
+                    );System.out.println(idM);
+
+                    cbxProducto.removeAllItems();
+                    listModel.clear();
+                    for (ComboBoxOption comboBoxOption : productoservice.listarMarcaCombobox(idM)) {
+                        cbxProducto.addItem(comboBoxOption);
+                        listModel.addElement(comboBoxOption.getValue());
+                    }
+                    jList1.setModel(listModel);
+                } catch (Exception ex) {
+                    System.out.println("Error - " + ex.getMessage());
+                }
+
+            }
+        });
+
     }
 
     public void setContexto(ConfigurableApplicationContext ctx) {
@@ -51,7 +79,7 @@ public class MainCliente extends javax.swing.JPanel {
         listarClientes();
 
         combox.removeAllItems();
-        for (ComboBoxOption comboBoxOption : marcaService.listarMarcaCombobox()) {
+        for (ComboBoxOption comboBoxOption : maracaservice.listarMarcaCombobox()) {
             combox.addItem(comboBoxOption);
         }
     }
@@ -303,9 +331,9 @@ public class MainCliente extends javax.swing.JPanel {
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cbxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cbxProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(combox, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(combox, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
