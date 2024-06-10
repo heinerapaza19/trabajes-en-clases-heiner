@@ -287,9 +287,9 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtNombre" min="-2" pref="154" max="-2" attributes="0"/>
                                       <Component id="cbxTipo" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jDateChooser1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="cbxProducto" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="combox" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                                      <Component id="jDateChooser1" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
